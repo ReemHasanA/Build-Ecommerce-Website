@@ -11,13 +11,12 @@ if (isset($_GET['min_price']) || isset($_GET['max_price'])){
         $result = $conn->query($sql);
         $min=$result->fetch_assoc();
         $min_price=$min['MIN(Price)'];
-        echo $min_price ;
     }elseif(!isset ($_GET['max_price'])){
         $min_price=$_GET['min_price'];
         $sql="SELECT MAX(Price) FROM Products";
-        $min=$result->fetch_assoc();
-        $max_price=$min['MAX(Price)'];
-        echo $max_price ;
+        $result = $conn->query($sql);
+        $max=$result->fetch_assoc();
+        $max_price=$max['MAX(Price)'];
     }else{
         $max_price=$_GET['max_price'];
         $min_price=$_GET['min_price'];
