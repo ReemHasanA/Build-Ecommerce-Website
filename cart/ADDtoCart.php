@@ -12,7 +12,7 @@ function sendJson(int $status, string $message, array $extra = []): void
       
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: access');
-header('Access-Control-Allow-Methods: POST');
+header('Access-Control-Allow-Methods: POST,PUT');
 header('Content-Type: application/json; charset=UTF-8');
 header('Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
 
@@ -31,6 +31,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') :
             if ($result1->num_rows > 0) {
                 $talb=$result1->fetch_assoc();
                 $quantity=++$talb['quantity'];
+                // if(isset($data->quantity)&&!empty($data->quantity)){
+                //     $quantity=$data->quantity;
+                // }else if(($data->quantity)===0){
+                //     $d="DELETE FROM cart WHERE user_id = '$user_id' AND  product_id = '$product_id'";
+                //     $conn->query($d);
+                // }
     $sql="UPDATE cart  SET quantity= '$quantity' WHERE user_id = '$user_id' AND  product_id = '$product_id'";
         $query=$conn->query($sql);
         }else{
