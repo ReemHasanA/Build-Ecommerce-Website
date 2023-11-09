@@ -14,35 +14,37 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: access');
 header('Access-Control-Allow-Methods: POST,PUT');
 header('Content-Type: application/json; charset=UTF-8');
-header('Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') :
     $data = json_decode(file_get_contents('php://input'));
+    if (isset($data->email)&&isset($data->total_price)&&isset($data->payment)){
     $email= $data->email;
-    $product_id = $data->product_id;
+    $total_price = $data->total_price;
+    $payment=$data->payment;
     $sql1 = "SELECT id FROM users WHERE users.email='$email'";
     $result = $conn->query($sql1);
     $nresult=$result->fetch_assoc();
     $user_id=$nresult['id'];
+    $sql = "INSERT INTO orders (`user_id`,`total_price`,`payment_by`) VALUES('$user_id','$total_price','$payment')";
+    $query = mysqli_query($conn, $sql);
     // print_r ($nresult)
     // $sql = "SELECT * FROM users INNER JOIN cart ON cart.user_id=users.id WHERE users.email='$email'";
-    $sql2="SELECT * FROM cart WHERE user_id = $user_id AND  product_id = $product_id";
+    // $sql="UPDATE orders  SET user_id= '$user_id',total_price='$total_price';
+        // $query=$conn->query($sql);
+    $sql2="SELECT * FROM cart WHERE user_id = $user_id ";
             $result1 = $conn->query($sql2);
             if ($result1->num_rows > 0) {
-                $talb=$result1->fetch_assoc();
-                $quantity=++$talb['quantity'];
-                if(isset($data->quantity)&&!empty($data->quantity)){
-                    $quantity=$data->quantity;
-                if(($quantity)===0){
-                    $d="DELETE FROM cart WHERE user_id = '$user_id' AND  product_id = '$product_id'";
-                    $conn->query($d);
-                }}
-    $sql="UPDATE cart  SET quantity= '$quantity' WHERE user_id = '$user_id' AND  product_id = '$product_id'";
-        $query=$conn->query($sql);
-        }else{
-
-    $sql = "INSERT INTO cart (`user_id`,`product_id`) VALUES('$user_id','$product_id')";
-    $query = mysqli_query($conn, $sql);}
+    //             $talb=$result1->fetch_assoc();
+    //             $quantity=++$talb['quantity'];
+    //             if(isset($data->quantity)&&!empty($data->quantity)){
+    //                 $quantity=$data->quantity;
+    //             if(($quantity)===0){
+                    $d="DELETE FROM cart WHERE user_id = '$user_id' ";
+                 $conn->query($d);
+               }
+       }else{
+        echo"no product to checkout";
+}
     if ($query) sendJson(201, "successfully added.");
     sendJson(500, 'Something going wrong.');
     
