@@ -24,7 +24,7 @@ function CheckEmail() {
         document.getElementById('errMail').innerHTML=` `
         final()
     }else{
-        document.getElementById('errMail').innerHTML=`<img src="images/x.svg" width="10px" alt="error">unvalid Email.<br>`
+        document.getElementById('errMail').innerHTML=`unvalid Email.<br>`
          
     }
 }
