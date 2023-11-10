@@ -30,7 +30,7 @@ nav {
     transition: 0.2s ease-in;
   }
   nav ul li a{
-    color: yellow;
+    color: #2d3142;
     font-size: 25px;
     font-weight: 500;
     text-decoration: none;
@@ -39,7 +39,7 @@ nav {
   nav .navLinks button{
     padding: 2px 20px;
     border-radius: 10px;
-    color: yellow;
+    color: #737d96;
     font-size: 16px;
     border-style: none;
     font-weight: 700;
@@ -47,7 +47,7 @@ nav {
     background-color:#2d3142 ;
   }
   nav ul li:hover{
-    background-color: #2d3142;
+    background-color: #737d96;
   }
   nav .menubtn{
     font-size: 30px;
@@ -198,10 +198,10 @@ nav {
   margin-bottom: 44PX;
 }
 .clockButton:hover {
-  opacity: 0.9;
   background-color: #2d3142;
   transform: 4s;
   transition: all var(--cover-timing) var(--cover-ease);
+  color: #30323e;
 
 
 
@@ -210,10 +210,11 @@ nav {
   display: block;
 }
 .clockButton a{
-  color: yellow;
   font-size: 1.4rem;
   text-align: center;
   display: none;
+  color: #30323e;
+
 }
 .cherf{
   width: 38%;
@@ -234,8 +235,9 @@ nav {
   background: none;
 }
 .cherfButton a{
-  color: yellow;
-  font-size: 1.4rem;
+  color: white;
+  font-weight: 500;
+  font-size: 1.5rem;
   text-align: center;
   display: none;
 }
@@ -244,10 +246,12 @@ nav {
 }
 .cherfButton:hover{
   background-color: black;
-  opacity: 0.4;
   transform: 4s;
-  transition: smooth;
-  transition: all var(--cover-timing) var(--cover-ease);
+  background: url(images/cherf-test.jpg) /* Linear gradient with semi-transparent black */
+  ;
+    background-size:contain; /* or background-size: 100%; */
+    background-repeat: no-repeat;
+    transition: background 0.3s ease, 
 
 
 }
@@ -268,8 +272,9 @@ nav {
   background: none;
 }
 .brwaz-1Button a{
-  color: yellow;
-  font-size: 1.4rem;
+  color: white;
+  font-weight: 500;
+  font-size: 1.5rem;
   text-align: center;
   display: none;
 }
@@ -278,10 +283,14 @@ nav {
 }
 .brwaz-1Button:hover{
   background-color: black;
-  opacity: 0.5;
   transform: 4s;
-  transition: smooth;
-  transition: all var(--cover-timing) var(--cover-ease);
+  background: url(images/brwazsgeer.jpg) /* Linear gradient with semi-transparent black */
+  ;
+    background-size:contain; /* or background-size: 100%; */
+    background-repeat: no-repeat;
+    transition: background 0.3s ease, 
+  
+
 
 
 }
@@ -296,8 +305,9 @@ nav {
   background: none;
 }
 .brwaz-2Button a{
-  color: yellow;
-  font-size: 1.4rem;
+  color: white;
+  font-weight: 500;
+  font-size: 1.5rem;
   text-align: center;
   display: none;
 }
@@ -306,10 +316,12 @@ nav {
 }
 .brwaz-2Button:hover{
   background-color: black;
-  opacity: 0.5;
   transform: 4s;
-  transition: smooth;
-  transition: all var(--cover-timing) var(--cover-ease);
+  background: url(images/brwazsgeer.jpg) /* Linear gradient with semi-transparent black */
+  ;
+    background-size:contain; /* or background-size: 100%; */
+    background-repeat: no-repeat;
+    transition: background 0.3s ease, 
 
 
 }
@@ -338,8 +350,9 @@ nav {
   background: none;
 }
 .mzhryaButton a{
-  color: yellow;
-  font-size: 1.4rem;
+  color: white;
+  font-weight: 500;
+  font-size: 1.5rem;
   text-align: center;
   display: none;
 }
@@ -348,10 +361,14 @@ nav {
 }
 .mzhryaButton:hover{
   background-color: black;
-  opacity: 0.5;
   transform: 4s;
-  transition: smooth;
-  transition: all var(--cover-timing) var(--cover-ease);
+  background: url(images/mzhrya-try-3.jpg) /* Linear gradient with semi-transparent black */
+  ;
+    background-size:100%; /* or background-size: 100%; */
+    background-repeat: no-repeat;
+    transition: background 0.3s ease, 
+
+
 
 
 }
@@ -371,22 +388,25 @@ nav {
   background: none;
 }
 .knbayButton a{
-  color: yellow;
-  font-size: 1.4rem;
+  color: white;
+  font-weight: 600;
+  font-size: 1.7rem;
   text-align: center;
   display: none;
 }
 .knbayButton:hover a{
   display: block;
 }
-.knbayButton:hover{
-  background-color: black;
-  opacity: 0.5;
-  transition: smooth;
-  transition: all var(--cover-timing) var(--cover-ease);
-
+.knbayButton:hover {
+  background: url(images/home-5-test.jpg) /* Linear gradient with semi-transparent black */
+;
+  background-size: 100%; /* or background-size: 100%; */
+  background-repeat: no-repeat;
+  transition: background 0.3s ease, 
 
 }
+
+
 /* .text2{
   width: 20%;
   display: flex;
