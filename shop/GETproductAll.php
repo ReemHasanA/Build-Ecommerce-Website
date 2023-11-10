@@ -13,8 +13,9 @@ $JSON=array();
 $sql="SELECT name,img,price FROM products";
 $result = $conn->query($sql);
 while ($row = $result->fetch_assoc()) {
-$JSON[]=json_encode($row);}
-print_r($JSON);
+$JSON[]=$row;}
+
+echo json_encode($JSON);
 }else {
     echo 'error method';
 }
