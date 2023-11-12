@@ -60,15 +60,20 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(response => response.json())
     .then(data => {
         console.log(data);
+        let newPrice;
         // const list = document.createElement("ul");
         data.forEach( listItem=> {
-    
+          if (listItem.price>listItem.price_after_discount&&listItem.price_after_discount>0) {
+            newPrice=listItem.price_after_discount;
+          }else{
+            newPrice=listItem.price;
+          }
          list.innerHTML+=`<li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
          <span class="col-2">${listItem.name}</span>
         <span>${listItem.quantity}</span>
-        <span>${listItem.price} JD</span>
+        <span>${newPrice} JD</span>
           </li>`;
-        a+=listItem.quantity*listItem.price;
+        a+=listItem.quantity*newPrice;
         
     });
     console.log(a);
