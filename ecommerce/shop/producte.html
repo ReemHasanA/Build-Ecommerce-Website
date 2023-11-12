@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+     <link rel="stylesheet" href="product.css">
+    <title>Furniture Product Page</title>
+   
+  </head>
+  <body>
+    <div class="header">
+      <a href="#" class="logo">FurnitureStore</a>
+
+      <nav class="navbar">
+        <a href="../slide.html">home</a>
+        <a href="shop.html">shop</a>
+        <a href="#footer">contact us</a>
+        <a href="../loginSignUp/signup.html">login</a>
+      </nav>
+    </div>
+
+    <main class="container">
+      <!-- Left Column -->
+      <div class="left-column"></div>
+      <div>
+      <!-- Right Column -->
+      <div class="right-column">
+        <!-- Product Description -->
+        <div class="product-description">
+          <span
+            ><a href="athath/index.html" style="color: #292d48">home</a
+            >/product</span
+          >
+          <h2 id="productName">product name</h2>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <p id="productDetails">product details Lorem ipsum...</p>
+        </div>
+
+        <!-- Product Configuration -->
+        <div class="product-configuration"></div>
+
+        <!-- Product Pricing -->
+        <div class="product-price">
+          <span id="productPrice">price: 148$</span> <br /><br />
+          <span class="discount-price" id="discountPrice"
+            >Price after Discount: $120</span
+          ><br /><br />
+          <div id="cart" class="cart" data-totalitems="0">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+
+          <div class="page-wrapper">
+            <button id="addtocart">
+              Add to Cart
+              <span class="cart-item"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="container mt-5 mb-5">
+        <div class="d-flex justify-content-center row">
+            <div class="d-flex flex-column col-md-8">
+                <div class="coment-bottom bg-white p-2 px-4">
+                    <div class="product-details mb-4">
+                        <h2 id="productName"></h2>
+                        <p id="productDescription"></p>
+                    </div>
+                    <div class="d-flex flex-row add-comment-section mt-4 mb-4">
+                        <input type="text" id="commentInput" class="form-control mr-3" placeholder="Add comment">
+                        <input type="number" id="rateInput" class="form-control mr-3" placeholder="Add rate">
+                        <button id="commentButton" class="btn btn-primary" type="button">Comment</button>
+                    </div>
+                    <div id="commentSection" class="coment-bottom bg-white p-2 px-4"></div>
+                    <hr>
+                    <div id="cont">
+  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+    </div>
+    <footer id="footer">
+      <div class="group">
+          <br>
+          <br>
+          Our Group:Ahmad reem heba<br>
+          mohanad heba mahmud
+          <br><br>
+          @Copyright
+      </div>
+  </footer>
+    
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="product.js">
+     
+    </script>
+  </body>
+</html>

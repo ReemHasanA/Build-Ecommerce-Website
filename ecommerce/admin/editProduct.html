@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> prouduct </title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 20px;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input[type="submit"] {
+      background-color: #4caf50;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    button {
+      background-color: #008CBA;
+      color: #fff;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005F79;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Edit prouduct Information</h2>
+
+  <form id="editUserForm">
+    <label for="img">img:</label>
+    <input type="url" id="img" name="img" required><br>
+
+    <label for="name">name:</label>
+    <input type="name" id="name" name="name" required><br>
+
+    <label for="description">description:</label>
+    <input type="description" id="description" name="description" required><br>
+
+    <label for="price"> priceL:</label>
+    <input type="number" id="price" name="price"><br>
+    <label for="price_after_discount">Profile price:</label>
+    <input type="number" id="price_after_discount" name="price_after_discount"><br>
+    <label for="Dimensions">Dimensions:</label>
+    <input type="text" id="Dimensions" name="Dimensions"><br>
+
+    <input type="submit" value="Update Information">
+  </form>
+
+  <button onclick="goBack()">Back</button>
+
+  <script>
+    document.getElementById('editUserForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+  
+      // Get form data
+      const formData = {
+        img: document.getElementById('img').value,
+        name: document.getElementById('name').value,
+        description: document.getElementById('description').value,
+        price: document.getElementById('price').value,
+        price_after_discount: document.getElementById('price_after_discount').value,
+        Dimensions: document.getElementById('Dimensions').value
+      };
+  
+      // Get the product ID from the URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const product_id = urlParams.get('id');
+      console.log(product_id);
+
+      // Assume you have an API endpoint for updating product information
+      const apiUrl = `http://localhost/ecommerce/API1/prouduct/update_product.php?product_id=${product_id}`;
+  
+      // Make API request (using fetch)
+      console.log(product_id);
+      fetch(apiUrl, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ product_id, ...formData }), // Include product_id in the JSON body
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Product information updated successfully:', data);
+     
+      })
+      .catch(error => {
+        console.error('Error updating product information:', error);
+  
+      });
+    });
+  </script>
+
+</body>
+</html>

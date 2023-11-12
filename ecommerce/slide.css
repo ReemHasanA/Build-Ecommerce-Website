@@ -1,0 +1,278 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Domine', serif;
+    font-family: 'Edu TAS Beginner', cursive;
+    font-family: 'Lora', serif;
+    font-family: 'Roboto Slab', serif;
+    font-family: 'Tajawal', sans-serif;
+    font-family: 'Tilt Neon', sans-serif;
+}
+
+.header{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:1.3rem 10%;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter:blur(15px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+  }
+  .logo{
+     font-size: 1rem;
+     color:white;
+     text-decoration: none;
+     font-weight: 700;
+  }
+ 
+  .navbar a{
+     text-decoration: none;
+     font-size: 1.15rem;
+     color:white;
+     font-weight: 500;
+     margin-left: 1.5rem;
+  }
+  
+   
+
+
+.main{
+    height: 100vh;
+    width:100%;
+}
+.wrapper,
+.slide{
+   overflow: hidden;
+    width:100%;
+    height: 100%;
+}
+.slide::before{
+    content:" ";
+    position:absolute;
+    height: 100%;
+    width:100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index:10;
+}
+.slide .image{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.slide .image-date{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-80%);
+    text-align: center;
+  
+}
+.image-date span.text{
+    font-size:20px;
+    font-weight: 400;
+    color: white;
+}
+.image-date h2{
+    font-size: 45px;
+    font-weight: 600;
+
+    color:white;
+}
+a.button{
+    display:inline-block;
+    padding:10px 20px;
+    border-radius: 25px;
+    color:#000;
+    background-color: aliceblue;
+    text-decoration: none;
+    margin-top: 25px ;
+    transition: all 0.3s ease;
+}
+
+ 
+ /*2nd section*/
+ .hero-about{
+    margin-bottom: 400px;
+    background-color: #eee;
+    overflow: hidden;
+      
+ }
+ .heading h1{
+    color:gray;
+    font-size: 55px;
+    text-align: center;
+    margin-top:35px;
+ }
+.container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:90%;
+    margin:65px auto;
+
+}
+.hero-container{
+    flex:1;
+    width: 600px;
+    margin:0 25px;
+}
+.hero-container h2{
+    font-size:38px;
+    margin-bottom: 40px;
+    color:gray;
+
+    
+}
+
+.hero-container p{
+    font-size:30px;
+    margin-bottom: 40px;
+    line-height: 1.5;
+    color:gray;
+}
+.hero-container button{
+    display:inline-block;
+    background-color:gray;
+    color:white;
+    padding:10px 20px;
+    border-radius: 25px;
+    font-size:20px;
+    border:none;
+    cursor:pointer;
+    transition: 0.3s ease;
+}
+
+.hero-container button:hover{
+    background-color: rgb(148, 148, 148);
+    
+}
+.hero-image{
+    flex:1;
+    width:600px;
+    margin:auto;
+}
+.hero-image img{
+    
+    height: auto;
+    border-radius: 10px;
+    
+     
+}
+
+@media screen and (max-width:768px){
+    .heading h1{
+        font-size: 45px;
+        margin-top:30px;;
+    }
+    .hero-about{
+        margin: 0;
+    }
+    .container{
+        width:100%;
+        flex-direction: column;
+        margin: 0px;
+        padding: 0 40px;
+    }
+    .hero-container{
+        width:100%;
+        margin:35px 0px;
+    }
+    .hero-container h2{
+        font-size: 30px;
+    }
+    .hero-container p{
+        font-size: 18px;
+    }
+    .hero-container button{
+        font-size: 14px;
+        padding: 8px 11px;
+    }
+    .hero-image img{
+        width:300px;
+        
+    }
+}
+ 
+.galary{
+     
+    width:900px;
+    display:flex;
+    overflow-x: scroll;
+    
+}
+ 
+
+.galary div{
+    width:100%;
+    display:grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+    padding:10px;
+    flex:none;
+}
+.galary div img{
+    width:100%;
+    filter:grayscale(50%);
+    transition:transform 0.5s;
+
+}
+
+.galary div img:hover{
+    filter:grayscale(0);
+    cursor:pointer;
+    transform: scale(1.1);
+    
+}
+.galary::-webkit-scrollbar{
+    display: none;
+}
+.galary-wrap{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin:2% auto;
+}
+#back,#next{
+    width:50px;
+    cursor:pointer;
+    margin:40px;
+}
+
+ 
+.huda{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 50px;
+}
+.btn2{ float: right;
+    display:inline-block;
+    background-color:gray;
+    color:white;
+    padding:10px 20px;
+    border-radius: 25px;
+    font-size:20px;
+    border:none;
+    cursor:pointer;
+    transition: 0.3s ease;
+    margin-right: 100px;
+       
+}
+
+/******************footer**************************/
+footer{
+    width: 100%;
+    height: 20vh;
+    background-color: #f8f8f8;
+}
+.group{
+    text-align: center;
+    /*margin-top: 100px;*/
+}
+#logout{
+    display: none;
+}

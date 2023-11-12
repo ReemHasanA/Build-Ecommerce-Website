@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="shop.css" />
+    <title></title>
+    <link rel="stylesheet" href="shop.css" />
+    <style>
+      /* Add any additional styles here */
+    </style>
+    <script src="shop.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Domine&family=Edu+TAS+Beginner&family=Lora:ital@1&family=Roboto+Slab:wght@300&family=Tajawal&family=Tilt+Neon&display=swap" rel="stylesheet">
+<link rel="import" href="loginSignUp/signup.html" />
+<link rel="stylesheet" href="swiper-bundle.min.css">
+  </head>
+  <body>
+    <div class="shopHomePage">
+      <div class="header">
+        <a href="#" class="logo">FurnitureStore</a>
+
+       <nav class="navbar">
+            <a href="/slide.html">home</a>
+            <a href="/shop/shop.html">shop</a>
+            <a href="#footer">contact us</a>
+            <a href="#" id="logout" onclick="logout()">logout</a>
+            <a href="/loginSignUp/signup.html" id="Signup">login</a>
+        </nav>
+    </div>
+        <div class="shopContainer">
+          <div class="container">
+          
+            <!-- / .topnav -->
+
+            <section class="banner" style="background-image: url(../Src/data-7.jpg);
+            background-size: contain;
+            background-repeat: no-repeat;">
+              <div class="slide">
+                <div class="description" >
+                  <h1>Premium comfort</h1>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Atque deleniti similique fugit expedita commodi,
+                    consectetur, eligendi.
+                  </p>
+                </div>
+               
+              </div>
+            </section>
+            <!-- Add these sections above or below your shop items section -->
+            <section class="filters">
+              <div class="filter">
+                <label for="priceFilter">Filter by Price:</label>
+                <select id="priceFilter">
+                  <option value="all">All</option>
+                  <option value="0-50">$0 - $50</option>
+                  <option value="51-100">$51 - $100</option>
+                  <option value="101-150">$101 - $150</option>
+                  <!-- Add more price ranges as needed -->
+                </select>
+              </div>
+              <div class="filter">
+                <label for="categoryFilter">Filter by Category:</label>
+                <select id="categoryFilter">
+                  <option value="all">All</option>
+                  <option value="electronics">Electronics</option>
+                  <option value="clothing">Clothing</option>
+                  <option value="home">Home</option>
+                  <!-- Add more categories as needed -->
+                </select>
+              </div>
+            </section>
+
+            <section class="shop-items" id="shopItem">
+              <div class="shop-item">
+                <a href="#" class="shop-item--container">
+                  <div class="meta">
+             
+             
+                </a>
+                <div class="title">
+                  <h3><a href="#">Basket with handles</a></h3>
+                </div>
+                <div class="price">
+                  <span><a>$160</a></span>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+      <footer  id="footer">
+        <div class="group">
+            <br>
+            <br>
+            Our Group:Ahmad reem heba<br>
+            mohanad heba mahmud
+            <br><br>
+            @Copyright
+        </div>
+    </footer>
+    </div>
+
+    <script src="shop.js"></script>
+  </body>
+</html>
