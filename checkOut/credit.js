@@ -95,3 +95,42 @@ fetch('http://localhost/ecommerce/API1/cart/Checkout.php', {
 alert('Checkout successfully!');
 
 }
+function showForm() {
+    document.getElementById('try').innerHTML=`
+    <form>   
+              <div class="row mb-4">
+                  <div class="col">
+                      <div class="form-outline">
+                          <input type="text" id="NameOnCard" 
+                          class="form-control" placeholder="Name on card" oninput="checkNameOnCard()"/>
+                          <label id="errNameOnCard"></label>
+                          
+                        </div>
+               </div>
+            </div>
+               <div class="row mb-4">
+                <div class="col">
+                  <div class="form-outline">
+                    <input type="text" id="cardNumber" class="form-control" placeholder="Credit card number" oninput="CheckcardNumber()"/>
+                    <label for="" id="errCheckcardNumber"></label>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="row mb-4">
+                <div class="col-3">
+                  <div class="form-outline">
+                    <input type="text" id="expirationDate" class="form-control" placeholder="MM/YY" oninput="checkexpirationDate()"/>
+                    <label for="" id="errexpirationDate"></label>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="form-outline">
+                    <input type="text" id="cvv" class="form-control" placeholder="CVV" oninput="Checkcvv()"/>
+                    <label for="" id="errcvv"></label>
+                  </div>
+                </div>
+              </div>
+              <!-- <input type="submit" value="add"> -->
+            </form>`;
+}
