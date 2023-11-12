@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         fetch("http://localhost/ecommerce/API1/user/login_oop.php", {
             method: "POST",
             body: JSON.stringify(user),
-            headers: { "Content-Type": "application/json" }
+            // headers: { "Content-Type": "application/json" }
         })
             .then((response) => {
                 if (response.ok) {
