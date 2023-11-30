@@ -70,3 +70,23 @@ const validateInputs = () => {
     }
 
 };
+onclick
+
+
+const user = { name: username.value, email: email.value, password: password.value };
+
+fetch("http://127.0.0.1:8000/api/signup", {
+    method: "POST",
+    body: JSON.stringify(user),
+    headers: { "Content-Type": "application/json" },
+})
+    .then((response) => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error('Network response was not ok');
+        }
+    })
+    .then((data) => {
+        console.log(data);
+    });

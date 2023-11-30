@@ -136,7 +136,7 @@ searchInput.addEventListener('keyup', (e) => {
              
               <div class="product-cell" ">
               <span class="cell-label">Action:</span><button class="app-content-headerButton"><a style = "text-decoration: none;color:white" href="editproduct.html?id=${event.product_id}">Edit</a></button>
-              <button style ="margin-left:10px"class="app-content-headerButton"><a style = "text-decoration: none;color:white;" href="http://localhost/ecommerce/API1/prouduct/delete_product.php?id=${event.product_id}">Delete</a></button>
+              <button style ="margin-left:10px"class="app-content-headerButton"><a style = "text-decoration: none;color:white;" href="http://localhost/ecommerce/API1/prouduct/delete_product.php?id=${event.product_id}" >Delete</a></button>
             </div>
             
                 `;

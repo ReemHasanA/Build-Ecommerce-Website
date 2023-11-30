@@ -97,7 +97,7 @@ a.button{
  
  /*2nd section*/
  .hero-about{
-    margin-bottom: 400px;
+    margin-bottom: 40px;
     background-color: #eee;
     overflow: hidden;
       
@@ -249,7 +249,8 @@ a.button{
     font-size: 30px;
     margin-top: 50px;
 }
-.btn2{ float: right;
+.btn2{ 
+    /* float: right; */
     display:inline-block;
     background-color:gray;
     color:white;

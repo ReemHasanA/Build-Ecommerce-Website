@@ -38,10 +38,12 @@ var swiper = new Swiper(".mySwiper", {
   
   function logout() {
     sessionStorage.clear();
+    location.reload();
   }
   let i=sessionStorage.length
   if (i<2){
     document.getElementById('logout').style.display='none';
+    document.getElementById('profile').style.display='none';
     document.getElementById('Signup').style.display='inline-block';
 
 } else{

@@ -39,6 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     echo json_encode(array("error" => "Invalid request method. Please use POST method."));
     
 }
-header("location:http://127.0.0.1:5500/index.html");
+header("location:http://127.0.0.1:5500/admin/index.html");
 
 $conn->close();

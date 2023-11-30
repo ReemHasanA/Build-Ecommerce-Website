@@ -1,3 +1,7 @@
+*{
+  font-family: 'Tilt Neon', sans-serif;
+}
+
 html,
 body {
   height: 100%;
@@ -59,13 +63,13 @@ body {
 
 .left-column img {
     width: 90%;
-    height: 35%;
+    height: 70%;
     position: absolute;
     /* padding: 20%; */
     padding-top: 25%;
     opacity: 0;
     transition: all 0.3s ease;
-    object-fit: cover;
+    object-fit: contain;
 }
 .left-column img.active {
   opacity: 1;

@@ -128,10 +128,10 @@
         <a href="#" class="logo">FurnitureStore</a>
     
        <nav class="navbar">
-            <a href="#">home</a>
-            <a href="#">shop</a>
+            <a href="../slide.html">home</a>
+            <a href="../shop/shop.html">shop</a>
             <a href="#">contact us</a>
-            <a href="#">login</a>
+            
         </nav>
     </div>
 
@@ -147,29 +147,32 @@
                     </div>
                   <div class="card-header bg-transparent text-center">
                       <div id="img"></div>
-                     <h3>username</h3>
+                     <h3 id="username">username</h3>
                   </div>
-                  <div class="card-body d-flex ">
-                    <p class="mb-0"><strong class="pr-1">user ID:</strong><span id="id">login first</span> </p>
-                    <a onclick="edit()" id="ed"><i class='fa-solid fa-pen-to-square'></i></a>
-                    <a onclick="save()" id="sa"><i class="fa-solid fa-check"></i></a>
+                  <div class="card-body d-flex justify-content-space-between">
+                    <p class="mb-0"><strong class="pr-1">user ID:</strong><span id="id"><a href="signup.html">login</a> first</span> </p>
+                    <!-- <a onclick="edit()" id="ed"><i class='fa-solid fa-pen-to-square'></i></a>
+                    <a onclick="save()" id="sa"><i class="fa-solid fa-check"></i></a> -->
                   </div>
                   <div class="card-body pt-0">
                   <table class="table table-bordered">
-                    <tr>
+                    <!-- <tr>
                       <th width="30%">username</th>
                       <td width="2%">:</td>
                       <td id="username"></td>
-                    </tr>
+                    </tr> -->
                     <tr>
-                      <th width="30%">password	</th>
+                      <!-- <th width="30%">password	</th>
                       <td width="2%">:</td>
                       <td id="password"></td>
-                    </tr>
+                    </tr> -->
                     <tr>
                       <th width="30%">email</th>
                       <td width="2%">:</td>
-                      <td id="email"></td>
+                      <td><span id="email"></span>
+                        <a onclick="edit()" id="ed"><i class='fa-solid fa-pen-to-square'></i></a>
+                        <a onclick="save()" id="sa"><i class="fa-solid fa-check"></i></a>
+                      </td>
                     </tr>
                     
                     </tr>
@@ -179,10 +182,10 @@
                     <button class="save-profile-btn" onclick="saveProfile()" >Save</button>
                 </div> -->
               <form action="" class="hide" id="editForm">
-                <input type="file" id="newImg">
+                <!-- <input type="file" id="newImg"> -->
                 <input type="text" id="name" placeholder="username">
-                <input type="password" name="" id="newPass" placeholder="password">
                 <input type="email" name="" id="newEmail" placeholder="Email">
+                <input type="password" name="" id="newPass" placeholder="password">
               </form>
             </div>
           </div>

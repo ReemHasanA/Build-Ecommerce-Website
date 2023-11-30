@@ -93,6 +93,7 @@ font-size: 1rem;
 /* Start */
 .container {
 padding: 0 10rem;
+
 }
 .nav .menu a {
 font-size: 2rem;
@@ -197,8 +198,8 @@ width: 50%;
 .shop-items {
 margin-top: 3rem;
 display: grid;
-grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-grid-template-rows: repeat(2, minmax(360px, 1fr));
+grid-template-columns: repeat(4, minmax(250px, 1fr));
+grid-template-rows: repeat(4, minmax(360px, 1fr));
 gap: 3rem;
 grid-gap: 3rem;
 grid-auto-rows: 360px;
@@ -288,7 +289,7 @@ color: red;
 align-self: center;
 width: 100%;
 height: 100%;
-
+object-fit: cover;
 
 }
 
@@ -572,10 +573,13 @@ width: 150px;
 }
 
 /******************footer**************************/
-footer{
+footer{ 
+  position: relative;
+  bottom: 0px;
   width: 100%;
   height: 20vh;
   background-color: rgb(0, 0, 0,0.1);
+  margin-top: 24vh;
 }
 .group{
   text-align: center;

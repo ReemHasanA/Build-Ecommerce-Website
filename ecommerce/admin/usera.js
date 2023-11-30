@@ -34,17 +34,22 @@ document.documentElement.classList.toggle('light');
         data.forEach(event => {
           const productRow = document.createElement('div');
           productRow.className = 'products-row';
+          let img1;
+
+          if (event.image != null) {
+            img1= event.image;
+          } else {
+            img1 = "https://www.murrayglass.com/wp-content/uploads/2020/10/avatar-300x300.jpeg";
+          }
 
           productRow.innerHTML = `
           <div class="product-cell image">
-            <img src="${event.image}">
+            <img src="${img1}">
           </div>
           <div class="product-cell category">
             <span class="cell-label">Event Name:</span>${event.username}
           </div>
-          <div class="product-cell">
-            <span class="cell-label">Event Date:</span>${event.password}
-          </div>
+          
         
           <div class="product-cell">
             <span class="cell-label">Location:</span>${event.email}

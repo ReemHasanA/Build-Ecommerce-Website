@@ -88,12 +88,12 @@ button:hover {
                 Dimensions: document.getElementById('Dimensions').value
            
             };
-
+console.log(formData);
             fetch('http://localhost/ecommerce/API1/prouduct/create_product.php', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                // headers: {
+                //     'Content-Type': 'application/json'
+                // },
                 body: JSON.stringify(formData)
             })
             .then(response => response.json())

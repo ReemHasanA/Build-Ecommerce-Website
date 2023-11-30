@@ -1,6 +1,9 @@
+let email = sessionStorage.getItem(`email`);
+let userid = sessionStorage.getItem(`userid`);
 document.addEventListener("DOMContentLoaded", function () {
-    // Replace 'http://localhost/ecommerce/API1/prouduct/read_product.php' with the actual URL of your API
-    const queryString = window.location.search;
+ 
+  // Replace 'http://localhost/ecommerce/API1/prouduct/read_product.php' with the actual URL of your API
+  const queryString = window.location.search;
 
     // Parse the query string using the URLSearchParams object
     const searchParams = new URLSearchParams(queryString);
@@ -9,8 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const productId  = searchParams.get('id');
     const apiUrl =
       `http://localhost/ecommerce/API1/prouduct/read_product.php?id=${productId}`;
-    // const productId = 1;
-// Get the query string
+    
+      
     
     // Fetch data from the API
     fetch(apiUrl)
@@ -52,36 +55,22 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 1000);
     });
   });
-  // Function to fetch comments from the API
-function fetchComments() {
-    // Get the query string
-    const queryString = window.location.search;
+ 
 
-    // Parse the query string using the URLSearchParams object
-    const searchParams = new URLSearchParams(queryString);
+// Call the fetchComments function when the page loads
+document.addEventListener('DOMContentLoaded', function () {
+  
+  const queryString = window.location.search;
+  // Parse the query string using the URLSearchParams object
+  const searchParams = new URLSearchParams(queryString);
+  // Get the value of the 'id' query parameter
+  const productId = searchParams.get('id');
+  const cont = document.getElementById('cont');
 
-    // Get the value of the 'id' query parameter
-    const productId = searchParams.get('id');
-
-    // Replace 'your-api-endpoint' with the actual URL of your API
-    const apiUrl = 'https://localhost/ecommerce/API1/rate/reedrate.php';
-
-    // Make a POST request to your API
-    fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ "product_id": productId }),
-    })
-    .then(response => response.json())
-    .then(comments => {
-        // Get the commentsContainer element
-        const cont = document.getElementById('cont');
-        
-        cont.innerHTML = '';
-
-        // Loop through the comments and append them to the commentsContainer
+fetch(`http://localhost/ecommerce/API1/rate/GETrate.php?id=${productId}`)
+      .then((response)=>response.json())
+      .then((comments)=>{
+        console.log(comments)
         comments.forEach(comment => {
             const commentsContainer = document.createElement('div');
             commentsContainer.className = 'commented-section mt-2';
@@ -98,15 +87,10 @@ function fetchComments() {
                     </div>
                 </div></div>
             `;
-
             cont.appendChild(commentsContainer);
         });
-    })
-    .catch(error => console.error('Error fetching comments:', error));
-}
-
-// Call the fetchComments function when the page loads
-document.addEventListener('DOMContentLoaded', fetchComments);
+      })
+});
 
 document.addEventListener("DOMContentLoaded", function () {
     const commentButton = document.getElementById("commentButton");
@@ -125,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "comment_content": commentInput,
             "rate": rateInput,
             "product_id": productId,
-            "user_id": 28
+            "user_id": userid
         };
 
         fetch('http://localhost/ecommerce/API1/rate/insert.php', {
@@ -145,4 +129,29 @@ document.addEventListener("DOMContentLoaded", function () {
             // Handle errors here
         });
     });
+
+    fetch(`http://localhost/ecommerce/API1/cart/CountCart.php?email=${email}`)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        const cartElement = document.getElementById('cart');
+        // const currentTotalItems = cartElement.getAttribute('data-totalitems');
+        cartElement.setAttribute('data-totalitems', data);
 });
+});function add() {
+  const queryString = window.location.search;
+
+    // Parse the query string using the URLSearchParams object
+    const searchParams = new URLSearchParams(queryString);
+
+    // Get the value of the 'id' query parameter
+    const productId  = searchParams.get('id');
+  fetch(`http://localhost/ecommerce/API1/cart/ADDtoCart.php`, {
+  method: "POST",
+  body: JSON.stringify({
+    email: email,
+    product_id: productId
+
+  })
+
+})};

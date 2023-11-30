@@ -7,7 +7,7 @@ document.getElementById("email").innerHTML = email;
 // Get elements
 const username = document.getElementById("username");
 const id = document.getElementById("id");
-const password = document.getElementById("password");
+// const password = document.getElementById("password");
 const img = document.getElementById("img");
 
 // Fetch user profile data from the API
@@ -15,16 +15,16 @@ fetch(`http://localhost/ecommerce/API1/user/userprofile.php?email=${email}`)
   .then(response => response.json())
   .then(data => {
     console.log(data);
-
+    sessionStorage.setItem("userid", data.id);
     // Display user profile data on the page
     username.innerHTML = data.username;
     id.innerHTML = data.id;
-    password.innerHTML = data.password;
+    // password.innerHTML = data.password;
 
     if (data.image != null) {
       img.innerHTML = `<img class="profile_img" src="${data.image}">`;
     } else {
-      img.innerHTML = `<img class="profile_img" src="https://www.akmllc.com.cy/storage/2022/09/User-Profile-PNG-Clipart-768x672.png">`;
+      img.innerHTML = `<img class="profile_img" src="https://www.murrayglass.com/wp-content/uploads/2020/10/avatar-300x300.jpeg">`;
     }
 
     console.log(data.id);
@@ -43,6 +43,9 @@ function toggleForms() {
   editForm.style.display = editForm.style.display === 'none' ? 'inline-block' : 'none';
   edButton.style.display = edButton.style.display === 'none' ? 'inline-block' : 'none';
   saveButton.style.display = saveButton.style.display === 'none' ? 'inline-block' : 'none';
+  if(newEmail.value){
+    sessionStorage.setItem("email", newEmail.value);}
+  location.reload()
 }
 function edit() {
   document.getElementById("editForm").style.display = 'inline-block';
@@ -53,35 +56,38 @@ function edit() {
 function save() {
   // Get form elements
   const newName = document.getElementById('name');
-  const newImg = document.getElementById('newImg');
+  // const newImg = document.getElementById('newImg');
   const newPass = document.getElementById('newPass');
   const newEmail = document.getElementById('newEmail');
-  const userId = sessionStorage.getItem('id');
+  const userId = sessionStorage.getItem('userid');
 
   // Get form data
   const formData = {
     username: newName.value,
     email: newEmail.value,
     password: newPass.value,
-    image: newImg.value
+    // image: newImg.value
   };
 
   console.log(userId);
 
   // Assume you have an API endpoint for updating user information
-  const apiUrl = `http://localhost/ecommerce/API1/user/userupdate.php?id=${userId}`;
+  const apiUrl = `http://localhost/ecommerce/API1/user/profileuserupdate.php?id=${userId}`;
 
   // Make API request using fetch
   fetch(apiUrl, {
     method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
+    // headers: {
+    //   'Content-Type': 'application/json',
+    // },
     body: JSON.stringify(formData),
   })
-    .then(response => response.json())
-    .then(data => {
+  .then(response => response.json())
+  .then(data => {
+    
       console.log('User information updated successfully:', data);
+      console.log(newEmail.value);
+     
       // You can add further UI updates or redirects as needed
     })
     .catch(error => {

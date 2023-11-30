@@ -40,10 +40,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     console.log('Role:', data.ROLE);
                     sessionStorage.setItem("userid", data.USER_ID);
                     console.log('User ID:', data.USER_ID);
-
-                    
-                    window.location.href = "../athath/index.html";
                     sessionStorage.setItem("email", username);
+
+                    window.location.href = "../slide.html";
+                    
                 } else if (data.ROLE == 1 && data.STATUS === true ) {
                     sessionStorage.setItem("email", username);
                     window.location.href = "../admin/index.html";
@@ -110,6 +110,12 @@ document.addEventListener("DOMContentLoaded", function () {
             .then((data) => {
                 if (data.status === 1) {
                     alert('Registration successful');
+                    sessionStorage.setItem("userid", data.USER_ID);
+                    console.log('User ID:', data.USER_ID);
+                    sessionStorage.setItem("email", email);
+                    
+                    window.location.href = "../slide.html";
+
                     // Redirect or perform other actions after successful registration
                 } else if (data.status === 10) {
                     alert('User with the same username already exists');

@@ -59,15 +59,23 @@ document.addEventListener("DOMContentLoaded", function () {
   function filterProducts() {
     const priceFilter = document.getElementById('priceFilter').value;
     const categoryFilter = document.getElementById('categoryFilter').value;
-
+    console.log(categoryFilter);
     const filteredProducts = originalData.filter(product => {
       const priceInRange = priceFilter === 'all' || (
         parseFloat(product.price_after_discount) >= parseFloat(priceFilter.split('-')[0]) &&
         parseFloat(product.price_after_discount) <= parseFloat(priceFilter.split('-')[1])
       );
 
-      const categoryMatches = categoryFilter === 'all' || product.category === categoryFilter;
-
+      const categoryMatches = categoryFilter === 'all' || product.category_id === categoryFilter;
+      // (
+      //   fetch(`http://localhost/ecommerce/API1/filter/GETcategory.php?id=${categoryFilter}`)
+      //   .then (response=>response.json())
+      //   .then(Match=>{
+      //     console.log(Match);
+      //   })
+      // )
+      //
+        console.log(categoryMatches);
       return priceInRange && categoryMatches;
     });
 
@@ -85,3 +93,7 @@ let i=sessionStorage.length
     document.getElementById('logout').style.display='inline';
 
 }  
+function logout() {
+  sessionStorage.clear();
+  location.reload();
+}
